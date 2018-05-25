@@ -1,0 +1,42 @@
+Query 1
+
+{ "query": 
+	{ "match_phrase": 
+		{ "name_stop": "south Park St [southbound] before South St" } }, "_source": ["stop_id"] } 
+
+{ "query":
+	{ "match_phrase": 
+		{ "stop_id": "8311" } }, "_source": ["trip_id"]  }
+
+{ "query": 
+	{ "match_phrase":
+		{ "trip_id": "6524099-2012_08A-1208BRwd-Weekday-01" } }, "_source": ["trip_headsign"]  }
+		
+---------------------------------------------------------------------------------------------------------
+Query 2
+
+{ "query":
+	{ "range":
+		{ "arrival_time": {"gte" : "18:00:00", "lt": "19:00:00"} } }, 
+		"_source": ["trip_id"]  }
+		
+
+{ "query": 
+	{ "match_phrase": 
+		{ "trip_id": "6518384-2012_05M-1205BRsu-Sunday-02" } }, "_source": ["trip_headsign"]  }
+		
+------------------------------------------------------------------------------------------------------------
+Query 3
+
+{ "query": {
+	"bool": {
+	"must": [{"match_phrase": {"trip_headsign": "320 DOWNTOWN HALIFAX VIA BRIDGE TERMINAL"}},{"match_phrase": {"route_id": "320-121"} }]}}}
+	
+{ "query": 
+	{ "match_phrase": 
+		{ "trip_id": "6519477-2012_05M-1205BRsu-Sunday-02" } }, "_source": ["stop_sequence", "stop_id"]  }
+		
+		
+{ "query": 
+	{ "match_phrase": 
+		{ "stop_id": "8698" } }, "_source": ["name_stop"]  }

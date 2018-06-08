@@ -50,3 +50,11 @@ If everything is configured well, you should get 200 Response from ES.
 Reference:
 **A1: Elastic Search and traditional RDBMS. (n.d.). Retrieved from**
 https://web.cs.dal.ca/~kosmajac/CSCI5408_tutorials/a1.html
+
+## Install python3 and run files
+pip3 install python3 <br/>
+sudo apt-get install python3-pip
+python3 A1Question1.py
+python3 A1Question2.py
+python3 q3.py
+
